@@ -849,7 +849,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 0.16037738, g: 0.11816805, b: 0.047659315, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 8d449b8d7bee57d448af1c6e85af8d3f, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 74d5b42c54fe83849a9b132c44644443, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -858,8 +858,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84
-  m_fontSizeBase: 84
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1354,7 +1354,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 0.16037738, g: 0.11816805, b: 0.047659315, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 8d449b8d7bee57d448af1c6e85af8d3f, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 74d5b42c54fe83849a9b132c44644443, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
@@ -1489,7 +1489,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 0.16037738, g: 0.11816805, b: 0.047659315, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 8d449b8d7bee57d448af1c6e85af8d3f, type: 2}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: 74d5b42c54fe83849a9b132c44644443, type: 2}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}

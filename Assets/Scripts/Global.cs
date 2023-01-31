@@ -47,7 +47,7 @@ public class Global : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("BetaBuild");
     }
     
     public void LoadLoop()

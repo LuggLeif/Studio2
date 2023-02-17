@@ -19,7 +19,19 @@ public class PlayerActions : MonoBehaviour
         RaycastHit hit;
         bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
 
-        if ((Physics.Raycast(ray, out hit, MaxUseDistance, UseLayers)) && !isOverUI)
+        if ()
+        {
+            
+        }
+        else if ()
+        {
+            
+        }
+        else if ()
+        {
+            
+        }
+        else if ((Physics.Raycast(ray, out hit, MaxUseDistance, UseLayers)) && !isOverUI)
         {
             if (hit.collider.CompareTag("Build"))  // Empty plot
             {  

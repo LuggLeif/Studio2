@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI HoverText;
-    [SerializeField] private float MaxUseDistance = 30f;
-    [SerializeField] private LayerMask UseLayers;
-    [SerializeField] private BuildingSelection Buildings;
     [SerializeField] private Global Global;
+    [SerializeField] private TextMeshProUGUI HoverText;
+    [SerializeField] private InterfaceInteraction Buildings;
+    [SerializeField] private LayerMask UseLayers;
+    
+    private float MaxUseDistance = 30f;
 
     private void Update()
     {
@@ -24,15 +25,11 @@ public class PlayerActions : MonoBehaviour
             {  
                 HoverText.SetText("This plot is empty.");
                 HoverText.gameObject.SetActive(true);
-                if (Input.GetMouseButtonDown(0))
-                    Buildings.OpenPlotMenu(hit.transform);
             }
             else if (hit.collider.CompareTag("Building"))  // Empty plot
             {  
                 HoverText.SetText("Here stands the " + hit.transform.name + ".");
                 HoverText.gameObject.SetActive(true);
-                if (Input.GetMouseButtonDown(0))
-                    Buildings.OpenBuildingMenu(hit.transform);
             }
         }
         else

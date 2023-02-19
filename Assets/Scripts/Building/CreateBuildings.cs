@@ -68,15 +68,14 @@ public class CreateBuildings : MonoBehaviour
         building = curBuilding;
         plotLayer = (1 << layerSize + 8) | (1 << 6);
         GetMat();
-        Debug.Log(finalMat);
         plotting = true;
     }
     private void PlaceBuilding()
     {
         plotting = false;
-        Debug.Log(finalMat);
         hoverPlot.GetComponent<BoxCollider>().enabled = false;
         hoverPlot.GetComponent<MeshRenderer>().enabled = false;
+        CheckPlots();
         
         building.parent = hoverPlot;
         building.tag = "Building";
@@ -130,28 +129,24 @@ public class CreateBuildings : MonoBehaviour
     {
         foreach (Transform child in building)
         {
-            Debug.Log("Child");
             if (child.GetComponent<Renderer>() != null)
                 child.GetComponent<Renderer>().material = finalMat;
             else
             {
                 foreach (Transform grandChild in child)
                 {
-                    Debug.Log("Grand");
                     if (grandChild.GetComponent<Renderer>() != null)
                         grandChild.GetComponent<Renderer>().material = finalMat;
                     else
                     {
                         foreach (Transform greatGrandChild in grandChild)
                         {
-                            Debug.Log("Great");
                             if (greatGrandChild.GetComponent<Renderer>() != null)
                                 greatGrandChild.GetComponent<Renderer>().material = finalMat;
                             else
                             {
                                 foreach (Transform greatGreatGrandChild in grandChild)
                                 {
-                                    Debug.Log("Great");
                                     if (greatGreatGrandChild.GetComponent<Renderer>() != null)
                                         greatGreatGrandChild.GetComponent<Renderer>().material = finalMat;
                                 }
@@ -159,6 +154,18 @@ public class CreateBuildings : MonoBehaviour
                         }
                     }
                 }
+            }
+        }
+    }
+
+    private void CheckPlots()
+    {
+        if (hoverPlot.parent.CompareTag("Plot"))
+        {
+            foreach (Transform plot in hoverPlot.parent)
+            {
+                if (plot.gameObject.layer != hoverPlot.gameObject.layer)
+                    plot.gameObject.SetActive(false);
             }
         }
     }

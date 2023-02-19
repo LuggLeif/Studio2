@@ -53,7 +53,11 @@ public class InterfaceInteraction : MonoBehaviour
 
     public void ConstMenus(int menu)
     {
+        if (currentBuilding && !currentBuilding.CompareTag("Building"))
+            Destroy(currentBuilding);
+        
         CloseUI();
+        
         openConstMenu.GetComponent<Image>().raycastTarget = false;  //Open button
         
         openConstMenu.GetChild(3).gameObject.SetActive(true);   //Close button

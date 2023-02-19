@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class InterfaceInteraction : MonoBehaviour
 {
-    private Transform openConstMenu;
+    [SerializeField] private CreateBuildings makeEm;
+    [SerializeField] private Transform buildings;
+    private Transform openConstMenu, exitButton;
+    private GameObject currentBuilding;
 
     private void Start()
     {
-        openConstMenu = transform.GetChild(1);
+        openConstMenu = transform.GetChild(0).GetChild(1);
+        exitButton = transform.GetChild(0).GetChild(0);
     }
 
-    /*[SerializeField] private Transform buildings;
-
-    private Transform currentBuilding;
+    /*private Transform currentBuilding;
     private Transform currentPlot;
     private GameObject selectedBuilding;
 
@@ -60,34 +62,45 @@ public class InterfaceInteraction : MonoBehaviour
         openConstMenu.GetChild(menu).gameObject.SetActive(true);   //The menu
         openConstMenu.GetChild(menu).GetComponent<Image>().raycastTarget = true;
 
-        for (int i = 0; i < openConstMenu.GetChild(0).childCount; i++)
+        foreach (Transform child in openConstMenu.GetChild(menu))
         {
-            openConstMenu.GetChild(menu).GetChild(i).GetComponent<Image>().raycastTarget = true;   //Children
+            child.GetComponent<Image>().raycastTarget = true;   //Children
         }
-        
-        transform.GetChild(0).gameObject.SetActive(true);  //Exit button
-        transform.GetChild(0).GetComponent<Image>().raycastTarget = true;
+
+        exitButton.gameObject.SetActive(true);  //Exit button
+        exitButton.GetComponent<Image>().raycastTarget = true;
     }
 
     public void CloseUI()
     {
-        transform.GetChild(0).gameObject.SetActive(false);  //Exit button
-        transform.GetChild(0).GetComponent<Image>().raycastTarget = false;
+        exitButton.gameObject.SetActive(false);  //Exit button
+        exitButton.GetComponent<Image>().raycastTarget = false;
         
-        for (int i = 0; i < openConstMenu.childCount; i++)
+        foreach (RectTransform menu in openConstMenu)
         {
-            openConstMenu.GetChild(i).gameObject.SetActive(false);  //Menus and close button
-            openConstMenu.GetChild(i).GetComponent<Image>().raycastTarget = false;
+            menu.gameObject.SetActive(false);  //Menus and close button
+            menu.GetComponent<Image>().raycastTarget = false;
             
-            if (openConstMenu.GetChild(i).GetChild(0))
-            {
-                for (int l = 0; l < openConstMenu.GetChild(i).childCount; i++)
-                {
-                    openConstMenu.GetChild(i).GetChild(l).GetComponent<Image>().raycastTarget = false;  //Children
-                }
-            }
+            foreach (RectTransform button in menu)
+                button.GetComponent<Image>().raycastTarget = false;  //Children
         }
         
         openConstMenu.GetComponent<Image>().raycastTarget = true;   //Open button
+    }
+
+    public void SpawnBuilding(int selection)
+    {
+        CloseUI();
+        int category;
+        if (selection < 4)
+            category = 0;
+        else
+        {
+            selection -= 2;
+            category = 1;
+        }
+        currentBuilding = Instantiate(buildings.GetChild(category).GetChild(selection).gameObject, null);
+        currentBuilding.transform.name = buildings.GetChild(category).GetChild(selection).transform.name;
+        makeEm.BuildingSpecs(currentBuilding.transform, selection);
     }
 }

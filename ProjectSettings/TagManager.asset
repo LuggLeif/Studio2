@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Build
   - Building
+  - Plot
   layers:
   - Default
   - TransparentFX
@@ -13,11 +13,11 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground
   - Usable
-  - Large
-  - Medium
   - Small
-  - 
+  - Medium
+  - Large
   - 
   - 
   - 

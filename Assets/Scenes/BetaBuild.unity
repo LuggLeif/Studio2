@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -672,9 +672,9 @@ GameObject:
   - component: {fileID: 187170069}
   - component: {fileID: 187170068}
   - component: {fileID: 187170067}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: TestPlot
-  m_TagString: Build
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,9 +769,9 @@ GameObject:
   - component: {fileID: 194571651}
   - component: {fileID: 194571650}
   - component: {fileID: 194571649}
-  m_Layer: 6
-  m_Name: Plot (9)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (3)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,8 +788,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 4
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &194571649
 BoxCollider:
@@ -1406,14 +1406,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingSelection, Assembly-CSharp
-        m_MethodName: SelectVendor
+      - m_Target: {fileID: 1656337005}
+        m_TargetAssemblyTypeName: InterfaceInteraction, Assembly-CSharp
+        m_MethodName: SpawnBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2163,9 +2163,9 @@ GameObject:
   - component: {fileID: 632468569}
   - component: {fileID: 632468568}
   - component: {fileID: 632468567}
-  m_Layer: 6
-  m_Name: Plot (8)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (2)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2182,8 +2182,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 3
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &632468567
 BoxCollider:
@@ -2378,9 +2378,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingSelection, Assembly-CSharp
-        m_MethodName: SelectHouse
+      - m_Target: {fileID: 1656337005}
+        m_TargetAssemblyTypeName: InterfaceInteraction, Assembly-CSharp
+        m_MethodName: SpawnBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2440,9 +2440,9 @@ GameObject:
   - component: {fileID: 655644994}
   - component: {fileID: 655644993}
   - component: {fileID: 655644992}
-  m_Layer: 6
-  m_Name: Plot (11)
-  m_TagString: Build
+  m_Layer: 9
+  m_Name: MediumPlot (0)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2459,8 +2459,8 @@ Transform:
   m_LocalScale: {x: 3, y: 0.25, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 6
+  m_Father: {fileID: 1916568003}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &655644992
 BoxCollider:
@@ -2525,6 +2525,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655644990}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &673107452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673107453}
+  m_Layer: 0
+  m_Name: LargePlots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673107453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673107452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1618482078}
+  m_Father: {fileID: 1097035128}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2619,6 +2652,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &708551803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,7 +3551,7 @@ GameObject:
   - component: {fileID: 935910833}
   - component: {fileID: 935910832}
   - component: {fileID: 935910831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3799,6 +3852,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3887,6 +3941,39 @@ MonoBehaviour:
   playerBody: {fileID: 1183529116}
   Global: {fileID: 633216730}
   mouseSensitivity: 250
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &971321074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,9 +3986,9 @@ GameObject:
   - component: {fileID: 971321078}
   - component: {fileID: 971321077}
   - component: {fileID: 971321076}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Merchant
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4040,7 +4127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4211,9 +4298,9 @@ GameObject:
   - component: {fileID: 1061334887}
   - component: {fileID: 1061334886}
   - component: {fileID: 1061334885}
-  m_Layer: 6
-  m_Name: Plot (10)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (4)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4230,8 +4317,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 5
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1061334885
 BoxCollider:
@@ -4308,9 +4395,9 @@ GameObject:
   - component: {fileID: 1085930159}
   - component: {fileID: 1085930158}
   - component: {fileID: 1085930157}
-  m_Layer: 6
-  m_Name: Plot (6)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (0)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4327,8 +4414,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 1
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1085930157
 BoxCollider:
@@ -4421,15 +4508,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1618482078}
-  - {fileID: 1085930156}
-  - {fileID: 1789557035}
-  - {fileID: 632468566}
-  - {fileID: 194571648}
-  - {fileID: 1061334884}
-  - {fileID: 655644991}
-  - {fileID: 1145132335}
-  - {fileID: 1906900028}
+  - {fileID: 673107453}
+  - {fileID: 1916568003}
+  - {fileID: 1767291829}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4594,9 +4675,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingSelection, Assembly-CSharp
-        m_MethodName: SelectHouse
+      - m_Target: {fileID: 1656337005}
+        m_TargetAssemblyTypeName: InterfaceInteraction, Assembly-CSharp
+        m_MethodName: SpawnBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4778,9 +4859,9 @@ GameObject:
   - component: {fileID: 1145132338}
   - component: {fileID: 1145132337}
   - component: {fileID: 1145132336}
-  m_Layer: 6
-  m_Name: Plot (12)
-  m_TagString: Build
+  m_Layer: 9
+  m_Name: MediumPlot (1)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4797,8 +4878,8 @@ Transform:
   m_LocalScale: {x: 3, y: 0.25, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 7
+  m_Father: {fileID: 1916568003}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1145132336
 BoxCollider:
@@ -4875,9 +4956,9 @@ GameObject:
   - component: {fileID: 1175438719}
   - component: {fileID: 1175438718}
   - component: {fileID: 1175438717}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Market
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5002,7 +5083,6 @@ GameObject:
   - component: {fileID: 1183529116}
   - component: {fileID: 1183529115}
   - component: {fileID: 1183529119}
-  - component: {fileID: 1183529118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5044,24 +5124,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 71.263, z: 0}
---- !u!114 &1183529118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183529113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe7296867dfcfd4faddf466d986557b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Global: {fileID: 633216730}
-  HoverText: {fileID: 1546654185}
-  Buildings: {fileID: 1656337005}
-  UseLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &1183529119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5998,9 +6060,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1488743879}
   - component: {fileID: 1488743880}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Trader
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6688,9 +6750,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1568641979}
   - component: {fileID: 1568641980}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Elite
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6736,9 +6798,9 @@ GameObject:
   - component: {fileID: 1618482081}
   - component: {fileID: 1618482080}
   - component: {fileID: 1618482079}
-  m_Layer: 6
-  m_Name: BigPlot
-  m_TagString: Build
+  m_Layer: 10
+  m_Name: LargePlot (0)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6755,7 +6817,7 @@ Transform:
   m_LocalScale: {x: 6, y: 0.25, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
+  m_Father: {fileID: 673107453}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1618482079
@@ -6939,6 +7001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb54c3d89954684984d3c7bc6ac0b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  makeEm: {fileID: 2086181641}
+  buildings: {fileID: 1660901234}
 --- !u!1 &1658314352
 GameObject:
   m_ObjectHideFlags: 0
@@ -7586,6 +7650,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749710404}
   m_CullTransparentMesh: 1
+--- !u!1 &1767291828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767291829}
+  m_Layer: 0
+  m_Name: SmallPlots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767291829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767291828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1085930156}
+  - {fileID: 1789557035}
+  - {fileID: 632468566}
+  - {fileID: 194571648}
+  - {fileID: 1061334884}
+  - {fileID: 1906900028}
+  m_Father: {fileID: 1097035128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789557034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7598,9 +7699,9 @@ GameObject:
   - component: {fileID: 1789557038}
   - component: {fileID: 1789557037}
   - component: {fileID: 1789557036}
-  m_Layer: 6
-  m_Name: Plot (7)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (1)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7617,8 +7718,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 2
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1789557036
 BoxCollider:
@@ -7724,9 +7825,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1841729366}
   - component: {fileID: 1841729367}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Worker
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7853,14 +7954,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingSelection, Assembly-CSharp
-        m_MethodName: SelectVendor
+      - m_Target: {fileID: 1656337005}
+        m_TargetAssemblyTypeName: InterfaceInteraction, Assembly-CSharp
+        m_MethodName: SpawnBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8159,9 +8260,9 @@ GameObject:
   - component: {fileID: 1906900031}
   - component: {fileID: 1906900030}
   - component: {fileID: 1906900029}
-  m_Layer: 6
-  m_Name: Plot (13)
-  m_TagString: Build
+  m_Layer: 8
+  m_Name: SmallPlot (5)
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8178,8 +8279,8 @@ Transform:
   m_LocalScale: {x: 1, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1097035128}
-  m_RootOrder: 8
+  m_Father: {fileID: 1767291829}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1906900029
 BoxCollider:
@@ -8244,6 +8345,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906900027}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1916568002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1916568003}
+  m_Layer: 0
+  m_Name: MediumPlots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1916568003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916568002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 655644991}
+  - {fileID: 1145132335}
+  m_Father: {fileID: 1097035128}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952277715
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,7 +8410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8717,9 +8851,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BuildingSelection, Assembly-CSharp
-        m_MethodName: SelectHouse
+      - m_Target: {fileID: 1656337005}
+        m_TargetAssemblyTypeName: InterfaceInteraction, Assembly-CSharp
+        m_MethodName: SpawnBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8778,6 +8912,7 @@ GameObject:
   - component: {fileID: 2086181638}
   - component: {fileID: 2086181640}
   - component: {fileID: 2086181639}
+  - component: {fileID: 2086181641}
   m_Layer: 5
   m_Name: InterfaceHUD
   m_TagString: Untagged
@@ -8847,6 +8982,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086181637}
   m_CullTransparentMesh: 1
+--- !u!114 &2086181641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086181637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe7296867dfcfd4faddf466d986557b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Global: {fileID: 633216730}
+  HoverText: {fileID: 1546654185}
 --- !u!1 &2113874275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8901,7 +9050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3796559420252777248, guid: 772bf82acae2f6d429b3cd05b22e5741, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3796559420252777248, guid: 772bf82acae2f6d429b3cd05b22e5741, type: 3}
       propertyPath: m_LocalPosition.x
@@ -686,7 +686,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1925350587
 MonoBehaviour:
@@ -2064,7 +2064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 818013349312702185, guid: 76efb22eb4c52954aba9812103beea6d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 818013349312702185, guid: 76efb22eb4c52954aba9812103beea6d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6161,7 +6161,7 @@ Transform:
   - {fileID: 4363326896554313770}
   - {fileID: 7245662951517560433}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -450, z: 0}
 --- !u!33 &4170274602759065565
 MeshFilter:

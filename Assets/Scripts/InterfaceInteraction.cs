@@ -59,8 +59,6 @@ public class InterfaceInteraction : MonoBehaviour
         CloseUI();
         
         openConstMenu.GetComponent<Image>().raycastTarget = false;  //Open button
-        openConstMenu.GetComponent<Button>().enabled = false;
-        openConstMenu.GetChild(4).gameObject.SetActive(true);
         
         openConstMenu.GetChild(3).gameObject.SetActive(true);   //Close button
         openConstMenu.GetChild(3).GetComponent<Image>().raycastTarget = true;
@@ -91,8 +89,6 @@ public class InterfaceInteraction : MonoBehaviour
                 button.GetComponent<Image>().raycastTarget = false;  //Children
         }
         
-        openConstMenu.GetChild(4).gameObject.SetActive(false);
-        openConstMenu.GetComponent<Button>().enabled = true;
         openConstMenu.GetComponent<Image>().raycastTarget = true;   //Open button
     }
 
@@ -100,11 +96,11 @@ public class InterfaceInteraction : MonoBehaviour
     {
         CloseUI();
         int category;
-        if (selection < 3)
+        if (selection < 4)
             category = 0;
         else
         {
-            selection -= 3;
+            selection -= 2;
             category = 1;
         }
         currentBuilding = Instantiate(buildings.GetChild(category).GetChild(selection).gameObject, null);

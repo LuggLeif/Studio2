@@ -26,7 +26,9 @@ public class CreateBuildings : MonoBehaviour
         {
             if (plotting && Physics.Raycast(ray, out hit, MaxUseDistance, plotLayer) && building)
             {
-                if (hit.transform.CompareTag("Plot") && Input.GetKeyDown(KeyCode.Mouse0))
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                    CancelBuild(building.gameObject);
+                else if (hit.transform.CompareTag("Plot") && Input.GetKeyDown(KeyCode.Mouse0))
                     PlaceBuilding();
                 
                 if (!plotting || hit.point == building.position)
@@ -168,5 +170,11 @@ public class CreateBuildings : MonoBehaviour
                     plot.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void CancelBuild(GameObject curBuilding)
+    {
+        if (curBuilding && !curBuilding.CompareTag("Building"))
+            Destroy(curBuilding);
     }
 }

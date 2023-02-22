@@ -24,7 +24,7 @@ public class CreateBuildings : MonoBehaviour
 
         if (!isOverUI)
         {
-            if (plotting && Physics.Raycast(ray, out hit, MaxUseDistance, plotLayer))
+            if (plotting && Physics.Raycast(ray, out hit, MaxUseDistance, plotLayer) && building)
             {
                 if (hit.transform.CompareTag("Plot") && Input.GetKeyDown(KeyCode.Mouse0))
                     PlaceBuilding();

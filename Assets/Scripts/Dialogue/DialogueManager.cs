@@ -17,6 +17,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeScript();
+    }
+    
+    private void InitializeScript()
+    {
         cleopatra = transform.GetChild(0);
         caesar = transform.GetChild(1);
         merchant = transform.GetChild(2);
@@ -68,7 +73,6 @@ public class DialogueManager : MonoBehaviour
                     cleopatra.GetChild(0).gameObject.SetActive(false);
                     
                     caesar.GetChild(0).gameObject.SetActive(true);
-                    caesar.GetChild(0).GetChild(0).gameObject.SetActive(true);
                     caesar.GetChild(0).GetChild(4).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
@@ -77,7 +81,6 @@ public class DialogueManager : MonoBehaviour
                     caesar.GetChild(0).gameObject.SetActive(false);
                     
                     cleopatra.GetChild(0).gameObject.SetActive(true);
-                    cleopatra.GetChild(0).GetChild(0).gameObject.SetActive(true);
                     cleopatra.GetChild(0).GetChild(4).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
@@ -96,7 +99,6 @@ public class DialogueManager : MonoBehaviour
                     cleopatra.GetChild(0).gameObject.SetActive(false);
                     
                     caesar.GetChild(0).gameObject.SetActive(true);
-                    caesar.GetChild(0).GetChild(0).gameObject.SetActive(true);
                     caesar.GetChild(0).GetChild(5).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
@@ -105,12 +107,13 @@ public class DialogueManager : MonoBehaviour
                     caesar.GetChild(0).gameObject.SetActive(false);
                     
                     cleopatra.GetChild(0).gameObject.SetActive(true);
-                    cleopatra.GetChild(0).GetChild(0).gameObject.SetActive(true);
                     cleopatra.GetChild(0).GetChild(7).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
                 case 11:
                     caesar.gameObject.SetActive(false);
+                    cleopatra.GetChild(0).gameObject.SetActive(false);
+                    cleopatra.GetChild(0).GetChild(7).gameObject.SetActive(false);
                     
                     merchant.gameObject.SetActive(true);
                     merchant.GetChild(0).gameObject.SetActive(true);
@@ -131,6 +134,7 @@ public class DialogueManager : MonoBehaviour
 
     public void UpgradeLibrary()
     {
+        InitializeScript();
         NarrativeUI();
         global.disabled = true;
         

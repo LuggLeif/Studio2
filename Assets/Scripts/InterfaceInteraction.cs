@@ -12,8 +12,8 @@ public class InterfaceInteraction : MonoBehaviour
 
     private void Start()
     {
-        openConstMenu = transform.GetChild(0).GetChild(1);
-        exitButton = transform.GetChild(0).GetChild(0);
+        openConstMenu = transform.GetChild(1).GetChild(1);
+        exitButton = transform.GetChild(1).GetChild(0);
     }
 
     /*private Transform currentBuilding;

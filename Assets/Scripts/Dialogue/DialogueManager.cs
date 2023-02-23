@@ -1,18 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject intHUD, libraryUI;
+    private bool uiToggle = false;
+
+    private Transform cleopatra, caesar, merchant;
+    private GameObject summary, choices;
+
+    private void Start()
     {
+        cleopatra = transform.GetChild(0);
+        caesar = transform.GetChild(1);
+        merchant = transform.GetChild(2);
         
+        summary = transform.GetChild(3).gameObject;
+        choices = transform.GetChild(4).gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpgradeLibrary()
     {
+        NarrativeUI();
         
+    }
+    
+    private void NarrativeUI()
+    {
+        uiToggle = !uiToggle;
+        intHUD.SetActive(uiToggle);
+        intHUD.GetComponent<RawImage>().raycastTarget = uiToggle;
+        libraryUI.SetActive(false);
+        libraryUI.GetComponent<Image>().raycastTarget = uiToggle;
     }
 }

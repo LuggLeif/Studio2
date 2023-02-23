@@ -5,8 +5,8 @@ public class Global : MonoBehaviour
 {
     public GameObject menuScreen;
     public bool startPaused;
-    public bool Busy = false;
-    
+    public bool busy = false, disabled = false;
+
     void Start()
     {
         Screen.SetResolution(1920, 1080, true);
@@ -30,14 +30,16 @@ public class Global : MonoBehaviour
     {
         menuScreen.SetActive(true);
         Time.timeScale = 0;
-        Busy = true;
+        busy = true;
+        disabled = true;
     }
     
     public void Play()
     {
         menuScreen.SetActive(false);
         Time.timeScale = 1;
-        Busy = false;
+        busy = false;
+        disabled = false;
     }
     
     public void Quit()

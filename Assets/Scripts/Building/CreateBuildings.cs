@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CreateBuildings : MonoBehaviour
 {
-    [SerializeField] private Global Global;
-    [SerializeField] private TextMeshProUGUI HoverText;
-    private LayerMask UseLayer = 1 << 7, plotLayer;
+    [SerializeField] private Global global;
+    [SerializeField] private TextMeshProUGUI hoverText;
+    private LayerMask useLayer = 1 << 7, plotLayer;
 
-    private float MaxUseDistance = 30f;
+    private float maxUseDistance = 30f;
     private bool plotting = false;
     private RaycastHit hit;
     private Transform building, hoverPlot;
@@ -16,7 +16,7 @@ public class CreateBuildings : MonoBehaviour
 
     private void Update()
     {
-        if (Global.Busy)
+        if (global.busy || global.disabled)
             return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -24,7 +24,7 @@ public class CreateBuildings : MonoBehaviour
 
         if (!isOverUI)
         {
-            if (plotting && Physics.Raycast(ray, out hit, MaxUseDistance, plotLayer) && building)
+            if (plotting && Physics.Raycast(ray, out hit, maxUseDistance, plotLayer) && building)
             {
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                     CancelBuild(building.gameObject);
@@ -47,22 +47,22 @@ public class CreateBuildings : MonoBehaviour
                     ChangeMats(false);
                 }
             }
-            else if ((Physics.Raycast(ray, out hit, MaxUseDistance, UseLayer)))
+            else if ((Physics.Raycast(ray, out hit, maxUseDistance, useLayer)))
             {
                 if (hit.collider.CompareTag("Plot"))  // Empty plot
                 {  
-                    HoverText.SetText("This plot is empty.");
-                    HoverText.gameObject.SetActive(true);
+                    hoverText.SetText("This plot is empty.");
+                    hoverText.gameObject.SetActive(true);
                 }
                 else if (hit.collider.CompareTag("Building"))  // Empty plot
                 {  
-                    HoverText.SetText("Here stands the " + hit.transform.name + ".");
-                    HoverText.gameObject.SetActive(true);
+                    hoverText.SetText("Here stands the " + hit.transform.name + ".");
+                    hoverText.gameObject.SetActive(true);
                 }
             }
         }
         else
-            HoverText.gameObject.SetActive(false);
+            hoverText.gameObject.SetActive(false);
     }
 
     public void BuildingSpecs(Transform curBuilding, int layerSize)

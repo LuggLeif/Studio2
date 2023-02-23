@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    [SerializeField] private Global global;
     public Transform playerBody;
-    [SerializeField] private Global Global;
     
     public float mouseSensitivity = 250f;
 
@@ -11,6 +11,9 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        if (global.disabled)
+            return;
+        
         if (Input.GetKey(KeyCode.Mouse2))
         {
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -26,12 +29,12 @@ public class MouseLook : MonoBehaviour
         if (Input.GetMouseButtonDown(2))
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Global.Busy = true;
+            global.busy = true;
         }
         else if (Input.GetMouseButtonUp(2))
         {
             Cursor.lockState = CursorLockMode.None;
-            Global.Busy = false;
+            global.busy = false;
         }
     }
 }

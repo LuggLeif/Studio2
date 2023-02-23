@@ -155,7 +155,7 @@ public class DialogueManager : MonoBehaviour
         libraryUI.GetComponent<Image>().raycastTarget = uiToggle;
     }
 
-    private void ExitDialogue()
+    public void ExitDialogue()
     {
         dialogueCounter = 0;
         
@@ -173,5 +173,8 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
+        global.disabled = false;
+        gameObject.SetActive(false);
     }
 }

@@ -8283,7 +8283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254d8d9fdebb9c44ca83096d38ba690c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  global: {fileID: 0}
+  global: {fileID: 633216730}
   playerBody: {fileID: 1183529116}
   mouseSensitivity: 250
 --- !u!114 &963194230
@@ -10487,7 +10487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a03e7f0ef2e9b44dba16c143d48d189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  global: {fileID: 0}
+  global: {fileID: 633216730}
   controller: {fileID: 1183529115}
   speed: 12
 --- !u!1 &1189610942
@@ -14295,7 +14295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351a51b0658226746924c2aa1e3c7eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  global: {fileID: 0}
+  global: {fileID: 633216730}
   intHUD: {fileID: 2086181637}
   libraryUI: {fileID: 1267863923}
 --- !u!1 &1698270381

@@ -8,7 +8,7 @@ public class CreateBuildings : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hoverText;
     private LayerMask useLayer = 1 << 7, plotLayer;
 
-    private float maxUseDistance = 30f;
+    private float maxUseDistance = 100f;
     private bool plotting = false;
     private RaycastHit hit;
     private Transform building, hoverPlot;

@@ -59,7 +59,7 @@ Material:
     - _Strength: 7.1
     m_Colors:
     - _Deep_Color: {r: 0.41051087, g: 0.5388599, b: 0.7075472, a: 0.62352943}
-    - _Main_Wave_Tiling: {r: -10, g: -5, b: 0, a: 0}
+    - _Main_Wave_Tiling: {r: 10, g: -20, b: 0, a: 0}
     - _Main_Wave_tiling: {r: 50, g: 50, b: 0, a: 0}
     - _Secondary_Wave_Tiling: {r: -8, g: -8, b: 0, a: 0}
     - _Shallow_Color: {r: 0.2724724, g: 0.3679245, b: 0.29633543, a: 0.8862745}

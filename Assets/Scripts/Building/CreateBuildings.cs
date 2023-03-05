@@ -94,6 +94,8 @@ public class CreateBuildings : MonoBehaviour
             finalMat = building.GetChild(0).GetChild(0).GetComponent<Renderer>().material;
         else if (building.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
             finalMat = building.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
+        else if (building.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
+            finalMat = building.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
     }
     private void ChangeMats(bool inPlot)
     {
@@ -115,10 +117,18 @@ public class CreateBuildings : MonoBehaviour
                                 greatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
                             else
                             {
-                                foreach (Transform greatGreatGrandChild in grandChild)
+                                foreach (Transform greatGreatGrandChild in greatGrandChild)
                                 {
                                     if (greatGreatGrandChild.GetComponent<Renderer>() != null)
                                         greatGreatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                                    else
+                                    {
+                                        foreach (Transform triGreatGrandChild in greatGreatGrandChild)
+                                        {
+                                            if (triGreatGrandChild.GetComponent<Renderer>() != null)
+                                                triGreatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -147,10 +157,16 @@ public class CreateBuildings : MonoBehaviour
                                 greatGrandChild.GetComponent<Renderer>().material = finalMat;
                             else
                             {
-                                foreach (Transform greatGreatGrandChild in grandChild)
+                                foreach (Transform greatGreatGrandChild in greatGrandChild)
                                 {
                                     if (greatGreatGrandChild.GetComponent<Renderer>() != null)
                                         greatGreatGrandChild.GetComponent<Renderer>().material = finalMat;
+
+                                    foreach (Transform triGreatGrandChild in greatGreatGrandChild)
+                                    {
+                                        if (triGreatGrandChild.GetComponent<Renderer>() != null)
+                                            triGreatGrandChild.GetComponent<Renderer>().material = finalMat;
+                                    }
                                 }
                             }
                         }

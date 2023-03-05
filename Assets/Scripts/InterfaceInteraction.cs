@@ -81,7 +81,6 @@ public class InterfaceInteraction : MonoBehaviour
         
         currentBuilding = Instantiate(Resources.Load<GameObject>(folMenu + folSize + "/" + selection), null);
         currentBuilding.transform.name = selection;
-        currentBuilding.transform.GetChild(currentBuilding.transform.childCount - 2).gameObject.SetActive(true);
         
         makeEm.BuildingSpecs(currentBuilding.transform, layerSize);
     }

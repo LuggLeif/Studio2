@@ -1,3 +1,4 @@
+using System;
 using Mono.Cecil.Cil;
 using TMPro;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class CreateBuildings : MonoBehaviour
     private float maxUseDistance = 100f;
     private bool plotting = false;
     private RaycastHit hit;
-    private Transform building, hoverPlot;
+    private Transform building, hoverPlot, tempBuild;
     private Material finalMat;
 
     private void Update()
@@ -49,17 +50,14 @@ public class CreateBuildings : MonoBehaviour
             }
             else if ((Physics.Raycast(ray, out hit, maxUseDistance, useLayer)))
             {
-                if (hit.collider.CompareTag("Plot"))  // Empty plot
-                {  
-                    hoverText.SetText("This plot is empty.");
-                    hoverText.gameObject.SetActive(true);
-                }
-                else if (hit.collider.CompareTag("Building"))  // Empty plot
-                {  
+                if (hit.collider.CompareTag("Building")) // Empty plot
+                {
                     hoverText.SetText("Here stands the " + hit.transform.name + ".");
                     hoverText.gameObject.SetActive(true);
                 }
             }
+            else
+                hoverText.gameObject.SetActive(false);
         }
         else
             hoverText.gameObject.SetActive(false);
@@ -68,8 +66,11 @@ public class CreateBuildings : MonoBehaviour
     public void BuildingSpecs(Transform curBuilding, int layerSize)
     {
         building = curBuilding;
+        tempBuild = building.transform.GetChild(building.transform.childCount - 2);
         plotLayer = (1 << layerSize + 8) | (1 << 6);
+        
         GetMat();
+        tempBuild.gameObject.SetActive(true);
         plotting = true;
     }
     private void PlaceBuilding()
@@ -81,25 +82,26 @@ public class CreateBuildings : MonoBehaviour
         
         building.parent = hoverPlot;
         building.tag = "Building";
+        building.gameObject.layer = LayerMask.NameToLayer("Usable");
         FinalMat();
     }
 
     private void GetMat()
     {
-        if (building.GetComponent<Renderer>() != null)
-            finalMat = building.GetComponent<Renderer>().material;
-        else if (building.GetChild(0).GetComponent<Renderer>() != null)
-            finalMat = building.GetChild(0).GetComponent<Renderer>().material;
-        else if (building.GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
-            finalMat = building.GetChild(0).GetChild(0).GetComponent<Renderer>().material;
-        else if (building.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
-            finalMat = building.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
-        else if (building.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
-            finalMat = building.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
+        if (tempBuild.GetComponent<Renderer>() != null)
+            finalMat = tempBuild.GetComponent<Renderer>().material;
+        else if (tempBuild.GetChild(0).GetComponent<Renderer>() != null)
+            finalMat = tempBuild.GetChild(0).GetComponent<Renderer>().material;
+        else if (tempBuild.GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
+            finalMat = tempBuild.GetChild(0).GetChild(0).GetComponent<Renderer>().material;
+        else if (tempBuild.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
+            finalMat = tempBuild.GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
+        else if (tempBuild.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>() != null)
+            finalMat = tempBuild.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Renderer>().material;
     }
     private void ChangeMats(bool inPlot)
     {
-        foreach (Transform child in building)
+        foreach (Transform child in tempBuild)
         {
             if (child.GetComponent<Renderer>() != null)
                 child.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
@@ -139,7 +141,7 @@ public class CreateBuildings : MonoBehaviour
     }
     private void FinalMat()
     {
-        foreach (Transform child in building)
+        foreach (Transform child in tempBuild)
         {
             if (child.GetComponent<Renderer>() != null)
                 child.GetComponent<Renderer>().material = finalMat;

@@ -10,7 +10,6 @@ public class InterfaceInteraction : MonoBehaviour
     private Transform openConstMenu, exitButton, currentMenu;
     private int layerSize;
     private string folMenu, folSize;
-    private GameObject currentBuilding;
 
     private void Start()
     {
@@ -20,7 +19,7 @@ public class InterfaceInteraction : MonoBehaviour
 
     public void ConstMenus(int menu)
     {
-        makeEm.CancelBuild(currentBuilding);
+        makeEm.CancelBuild();
         CloseUI();
         currentMenu = openConstMenu.GetChild(menu);
         
@@ -79,10 +78,7 @@ public class InterfaceInteraction : MonoBehaviour
     {
         CloseUI();
         
-        currentBuilding = Instantiate(Resources.Load<GameObject>(folMenu + folSize + "/" + selection), null);
-        currentBuilding.transform.name = selection;
-        
-        makeEm.BuildingSpecs(currentBuilding.transform, layerSize);
+        makeEm.BuildingSpecs(folMenu + folSize + "/" + selection, selection, layerSize);
     }
 
     private void CloseSelection()

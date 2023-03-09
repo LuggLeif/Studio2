@@ -47,7 +47,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Depth: 0.4
-    - _Displacement: 5
+    - _Displacement: 7.78
     - _Displacemnt_TIming: 10
     - _Main_Normal_Strength: 1
     - _Main_Wave_Timing: 20

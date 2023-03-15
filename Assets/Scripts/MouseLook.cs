@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
@@ -7,7 +8,12 @@ public class MouseLook : MonoBehaviour
     
     public float mouseSensitivity = 250f;
 
-    float xRotation = 40.91f;
+    private float xRotation;
+
+    private void Awake()
+    {
+        xRotation = Camera.main.transform.rotation.x;
+    }
 
     void Update()
     {

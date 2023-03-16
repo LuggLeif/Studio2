@@ -8,7 +8,7 @@ public class MouseLook : MonoBehaviour
     
     public float mouseSensitivity = 250f;
 
-    private float xRotation;
+    private float xRotation, yRotation;
 
     private void Awake()
     {
@@ -22,14 +22,20 @@ public class MouseLook : MonoBehaviour
         
         if (Input.GetKey(KeyCode.Mouse2))
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
             
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, 0f, 90f);
             
+            yRotation = mouseX * mouseSensitivity * Time.deltaTime;
+            
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerBody.Rotate(Vector3.up * mouseX);
+            
+            if (playerBody.rotation.y > 0.9f && mouseX < 0f) // Decrease
+                playerBody.Rotate(Vector3.up * yRotation);
+            if (playerBody.rotation.y < 0.99f && mouseX > 0f) // Increase
+                playerBody.Rotate(Vector3.up * yRotation);
         }
             
         if (Input.GetMouseButtonDown(2))

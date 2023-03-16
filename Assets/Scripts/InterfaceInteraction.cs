@@ -9,7 +9,7 @@ public class InterfaceInteraction : MonoBehaviour
     [SerializeField] private CreateBuildings makeEm;
     private Transform openConstMenu, exitButton, currentMenu;
     private int layerSize;
-    private string folMenu, folSize;
+    private string folMenu, folSize, decoration;
 
     private void Start()
     {
@@ -23,23 +23,25 @@ public class InterfaceInteraction : MonoBehaviour
         CloseUI();
         currentMenu = openConstMenu.GetChild(menu);
         
-        openConstMenu.GetComponent<Image>().raycastTarget = false;  //Open button
+        openConstMenu.GetComponent<Image>().raycastTarget = false;  // Open button
         openConstMenu.GetComponent<Button>().enabled = false;
         
-        openConstMenu.GetChild(3).gameObject.SetActive(true);   //Close button
+        openConstMenu.GetChild(3).gameObject.SetActive(true);   // Close button
         openConstMenu.GetChild(3).GetComponent<Image>().raycastTarget = true;
 
-        openConstMenu.GetChild(menu).gameObject.SetActive(true);   //The menu
+        openConstMenu.GetChild(menu).gameObject.SetActive(true);   // The menu
         openConstMenu.GetChild(menu).GetComponent<Image>().raycastTarget = true;
-        openConstMenu.GetChild(4).gameObject.SetActive(true);   //Arrow
+        openConstMenu.GetChild(4).gameObject.SetActive(true);   // Arrow
 
         switch (menu)
         {
             case 0:
                 folMenu = "Buildings/";
+                decoration = "Decorations/";
                 break;
             case 1:
                 folMenu += "Housing";
+                decoration += "Housing";
                 break;
             case 2:
                 folMenu += "Vendors";
@@ -47,9 +49,9 @@ public class InterfaceInteraction : MonoBehaviour
         }
 
         foreach (Transform child in openConstMenu.GetChild(menu))
-            child.GetComponent<Image>().raycastTarget = true;   //Children
+            child.GetComponent<Image>().raycastTarget = true;   // Children
 
-        exitButton.gameObject.SetActive(true);  //Exit button
+        exitButton.gameObject.SetActive(true);  // Exit button
         exitButton.GetComponent<Image>().raycastTarget = true;
     }
 
@@ -98,21 +100,19 @@ public class InterfaceInteraction : MonoBehaviour
     public void CloseUI()
     {
         CloseSelection();
-        exitButton.gameObject.SetActive(false);  //Exit button
+        exitButton.gameObject.SetActive(false);  // Exit button
         exitButton.GetComponent<Image>().raycastTarget = false;
 
         foreach (RectTransform menu in openConstMenu)
         {
-            menu.gameObject.SetActive(false);  //Menus and close button
+            menu.gameObject.SetActive(false);  // Menus and close button
             menu.GetComponent<Image>().raycastTarget = false;
 
             foreach (RectTransform button in menu)
-            {
-                button.GetComponent<Image>().raycastTarget = false;  //Children
-            }
+                button.GetComponent<Image>().raycastTarget = false;  // Children
         }
      
-        openConstMenu.GetChild(4).gameObject.SetActive(false);  //Open button
+        openConstMenu.GetChild(4).gameObject.SetActive(false);  // Open button
         openConstMenu.GetComponent<Button>().enabled = true;
         openConstMenu.GetComponent<Image>().raycastTarget = true;
     }

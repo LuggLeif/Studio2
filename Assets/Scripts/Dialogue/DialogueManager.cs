@@ -168,9 +168,7 @@ public class DialogueManager : MonoBehaviour
                 grandChild.gameObject.SetActive(false);
 
                 foreach (Transform greatGrandChild in grandChild)
-                {
                     greatGrandChild.gameObject.SetActive(false);
-                }
             }
         }
 

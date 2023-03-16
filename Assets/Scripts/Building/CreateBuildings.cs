@@ -2,6 +2,7 @@ using System;
 using Mono.Cecil.Cil;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateBuildings : MonoBehaviour
 {
@@ -10,15 +11,26 @@ public class CreateBuildings : MonoBehaviour
     private LayerMask useLayer = 1 << 7, plotLayer;
 
     private float maxUseDistance = 100f;
-    private bool plotting = false;
+    private bool plotting, upgrading;
     private RaycastHit hit;
-    private Transform tempBuild, finalBuild, buildShow, hoverPlot;
+    private Transform tempBuild, finalBuild, buildShow, hoverPlot, upgHover, upgButton;
 
+    private void Start()
+    {
+        plotting = upgrading = false;
+        upgButton = transform.GetChild(3);
+    }
+    
     private void Update()
     {
         if (global.busy || global.disabled)
             return;
 
+        if (!upgrading && Input.GetKeyDown(KeyCode.LeftControl))
+            UpgradeToggle();
+        else if (upgrading && (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.Mouse1)))
+            UpgradeToggle();
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
 
@@ -28,7 +40,7 @@ public class CreateBuildings : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                     CancelBuild();
-                else if (hit.transform.CompareTag("Plot") && Input.GetKeyDown(KeyCode.Mouse0))
+                if (hit.transform.CompareTag("Plot") && Input.GetKeyDown(KeyCode.Mouse0))
                     PlaceBuilding();
                 
                 if (!plotting || hit.point == tempBuild.position)
@@ -49,10 +61,27 @@ public class CreateBuildings : MonoBehaviour
             }
             else if ((Physics.Raycast(ray, out hit, maxUseDistance, useLayer)))
             {
-                if (hit.collider.CompareTag("Building")) // Empty plot
+                if (hit.collider.CompareTag("Building")) // Building
                 {
-                    hoverText.SetText("Here stands the " + hit.transform.name + ".");
+                    hoverText.SetText("Here stands the " + hit.transform.name + " building.");
                     hoverText.gameObject.SetActive(true);
+
+                    if (upgrading && Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        upgHover = hit.transform;
+                        for (int i = 0; i < upgHover.childCount; i++)
+                        {
+                            if (upgHover.GetChild(i) && (i + 1 != upgHover.childCount))
+                            {
+                                if (upgHover.GetChild(i).gameObject.activeSelf &&  upgHover.GetChild(i + 1))
+                                {
+                                    upgHover.GetChild(i).gameObject.SetActive(false);
+                                    upgHover.GetChild(i + 1).gameObject.SetActive(true);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             else
@@ -107,7 +136,16 @@ public class CreateBuildings : MonoBehaviour
         if (tempBuild)
             Destroy(tempBuild.gameObject);
     }
-    
+
+    public void UpgradeToggle()
+    {
+        upgrading = !upgrading;
+        
+        upgButton.GetComponent<Button>().enabled = !upgrading;
+        upgButton.GetComponent<Image>().raycastTarget = !upgrading;
+        upgButton.GetChild(1).gameObject.SetActive(upgrading);
+    }
+
     private void ChangeMats(bool inPlot)
     {
         foreach (Transform child in buildShow)

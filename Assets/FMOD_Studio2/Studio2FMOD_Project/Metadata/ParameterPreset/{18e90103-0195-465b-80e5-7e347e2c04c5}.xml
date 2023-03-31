@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{18e90103-0195-465b-80e5-7e347e2c04c5}">
+		<property name="name">
+			<value>Loop Calm</value>
+		</property>
+		<relationship name="folder">
+			<destination>{acf0acb6-e0e5-44cf-bbb3-24190b2f0748}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{ecd416be-82fc-48ba-952f-9feb09d96eed}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{ecd416be-82fc-48ba-952f-9feb09d96eed}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

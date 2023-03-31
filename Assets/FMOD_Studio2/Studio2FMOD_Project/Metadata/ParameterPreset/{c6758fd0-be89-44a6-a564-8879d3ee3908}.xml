@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{c6758fd0-be89-44a6-a564-8879d3ee3908}">
+		<property name="name">
+			<value>TambMari IN</value>
+		</property>
+		<relationship name="folder">
+			<destination>{acf0acb6-e0e5-44cf-bbb3-24190b2f0748}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0a51aafb-7bbc-4007-b4d5-39a939747adb}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0a51aafb-7bbc-4007-b4d5-39a939747adb}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

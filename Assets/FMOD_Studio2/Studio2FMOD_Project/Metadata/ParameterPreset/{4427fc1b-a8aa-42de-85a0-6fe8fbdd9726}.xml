@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4427fc1b-a8aa-42de-85a0-6fe8fbdd9726}">
+		<property name="name">
+			<value>Loop Theme 2</value>
+		</property>
+		<relationship name="folder">
+			<destination>{acf0acb6-e0e5-44cf-bbb3-24190b2f0748}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fe512c28-c5a0-407f-b316-4c7d2042dfae}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fe512c28-c5a0-407f-b316-4c7d2042dfae}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

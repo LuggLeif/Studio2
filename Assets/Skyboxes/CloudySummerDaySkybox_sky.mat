@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _AtmosphereThickness: 1
     - _Exposure: 1
-    - _Rotation: 333
+    - _Rotation: 225
     - _SunDisk: 2
     - _SunSize: 0.04
     - _SunSizeConvergence: 5

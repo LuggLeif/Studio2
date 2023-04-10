@@ -11,6 +11,8 @@ public class InterfaceInteraction : MonoBehaviour
     private int layerSize;
     private string folMenu, folSize, decoration;
 
+    private string[] decNames = new string[10];
+
     private void Start()
     {
         openConstMenu = transform.GetChild(1).GetChild(1);

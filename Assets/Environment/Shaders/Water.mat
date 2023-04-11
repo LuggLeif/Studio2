@@ -48,20 +48,20 @@ Material:
     m_Floats:
     - _Depth: 0.3
     - _Displacement: 5
-    - _Displacemnt_TIming: 50
+    - _Displacemnt_TIming: 100
     - _Main_Normal_Strength: 1
-    - _Main_Wave_Timing: 70
+    - _Main_Wave_Timing: 140
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Secondary_Normal_Strenght: 0.5
-    - _Secondary_Wave_Timing: -70
+    - _Secondary_Wave_Timing: -140
     - _Smoothness: 5
     - _Strength: 7.1
     m_Colors:
     - _Deep_Color: {r: 0.25882354, g: 0.39713457, b: 0.5764706, a: 0.92156863}
-    - _Main_Wave_Tiling: {r: 12, g: 12, b: 0, a: 0}
+    - _Main_Wave_Tiling: {r: 50, g: 50, b: 0, a: 0}
     - _Main_Wave_tiling: {r: 50, g: 50, b: 0, a: 0}
-    - _Secondary_Wave_Tiling: {r: -8, g: -8, b: 0, a: 0}
+    - _Secondary_Wave_Tiling: {r: -30, g: -30, b: 0, a: 0}
     - _Shallow_Color: {r: 0.25882354, g: 0.52664787, b: 0.5764706, a: 0.8862745}
   m_BuildTextureStacks: []
 --- !u!114 &8455001821712755661

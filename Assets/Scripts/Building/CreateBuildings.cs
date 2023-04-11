@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class CreateBuildings : MonoBehaviour
 {
     [SerializeField] private Global global;
-    [SerializeField] private TextMeshProUGUI hoverText;
     private LayerMask useLayer = 1 << 7, plotLayer;
 
     private float maxUseDistance = 100f;
     private bool plotting, upgrading;
     private RaycastHit hit;
     private Transform tempBuild, finalBuild, buildShow, hoverPlot, upgHover, upgButton;
+    
+    [SerializeField] private GameObject DLCScreen;
 
     private void Start()
     {
@@ -63,9 +64,6 @@ public class CreateBuildings : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Building")) // Building
                 {
-                    hoverText.SetText("Here stands the " + hit.transform.name + " building.");
-                    hoverText.gameObject.SetActive(true);
-
                     if (upgrading && Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         upgHover = hit.transform;
@@ -83,12 +81,10 @@ public class CreateBuildings : MonoBehaviour
                         }
                     }
                 }
+               else if (Input.GetKeyDown(KeyCode.Mouse0) && (hit.collider.CompareTag("EasterEgg")))
+                    DLCScreen.SetActive(true);
             }
-            else
-                hoverText.gameObject.SetActive(false);
         }
-        else
-            hoverText.gameObject.SetActive(false);
     }
 
     public void BuildingSpecs(string curBuilding, string curName, int layerSize)

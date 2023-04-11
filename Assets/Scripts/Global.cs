@@ -6,10 +6,12 @@ public class Global : MonoBehaviour
     public GameObject menuScreen;
     public bool startPaused;
     public bool busy = false, disabled = false;
+    [SerializeField] private GameObject Interface;
 
     void Start()
     {
         Screen.SetResolution(1920, 1080, true);
+        Interface.SetActive(false);
 
         if (startPaused)
              Pause();
@@ -40,6 +42,7 @@ public class Global : MonoBehaviour
         Time.timeScale = 1;
         busy = false;
         disabled = false;
+        Interface.SetActive(true);
     }
     
     public void Quit()
@@ -49,9 +52,14 @@ public class Global : MonoBehaviour
 
     public void Restart()
     {
+        SceneManager.LoadScene("Graybox");
+    }
+
+    public void EasterEgg()
+    {
         SceneManager.LoadScene("BetaBuild");
     }
-    
+
     public void LoadLoop()
     {
         SceneManager.LoadScene("LoopScene"); //, LoadSceneMode.Additive);

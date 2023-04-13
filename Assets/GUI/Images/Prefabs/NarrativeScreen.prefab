@@ -169,7 +169,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7969527959469266388}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -438,7 +438,7 @@ RectTransform:
   m_Children:
   - {fileID: 930939034246749918}
   m_Father: {fileID: 7969527959469266388}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -696,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 567.1, y: -302.6}
+  m_AnchoredPosition: {x: 567.1001, y: -302.6}
   m_SizeDelta: {x: 280, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7969527957952647957
@@ -1114,9 +1114,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Julius Caesar traveled to Rome in 47 B.C. followed by Cleopatra the following
-    year. Years later on the 15th of March in 44 B.C. Julius Caesar was assassinated.
-    Cleopatra remained in Rome for a few months before returning to Egypt.
+  m_text: Julius Caesar traveled to Rome in 47 B.C. followed by Cleopatra the year
+    after. On the 15th of March in 44 B.C. Julius Caesar was assassinated. Cleopatra
+    remained in Rome for a few months before returning to Egypt.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -3492,8 +3492,8 @@ RectTransform:
   - {fileID: 7969527957952647959}
   - {fileID: 7969527959763967949}
   - {fileID: 7969527958097819041}
-  - {fileID: 225185733408989553}
   - {fileID: 4211120571361135359}
+  - {fileID: 225185733408989553}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4026,7 +4026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7969527959763967949
 RectTransform:
   m_ObjectHideFlags: 0

@@ -42,11 +42,12 @@ public class InterfaceInteraction : MonoBehaviour
                 decoration = "Decorations/";
                 break;
             case 1:
-                folMenu += "Housing";
-                decoration += "Housing";
+                folMenu += "Housing/";
+                decoration += "Housing/";
                 break;
             case 2:
-                folMenu += "Vendors";
+                folMenu += "Vendors/";
+                decoration += "Vendors/";
                 break;
         }
 
@@ -67,22 +68,12 @@ public class InterfaceInteraction : MonoBehaviour
         }
 
         layerSize = category + 1;
-
-        switch (category)
-        {
-            case 0:
-                folSize = "/Small";
-                break;
-            case 1:
-                folSize = "/Large";
-                break;
-        }
     }
     public void SpawnBuilding(string selection)
     {
         CloseUI();
         
-        makeEm.BuildingSpecs(folMenu + folSize + "/" + selection, selection, layerSize);
+        makeEm.BuildingSpecs(folMenu + "/" + selection, selection, layerSize);
     }
 
     private void CloseSelection()

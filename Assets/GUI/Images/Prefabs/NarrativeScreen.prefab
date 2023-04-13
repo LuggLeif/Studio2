@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &225185733408989553
 RectTransform:
   m_ObjectHideFlags: 0
@@ -857,8 +857,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A peasant has decided to grace you with his dirty socks. Show him his place,
-    and bring prevent him from sullying the great name of Cleopatra!
+  m_text: The population is unhappy with the current state of the taxes and would
+    be happy if you would lower them, however this will lead to less income for the
+    city.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -2051,7 +2052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7969527958695035510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2070,7 +2071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 574, y: -292}
+  m_AnchoredPosition: {x: 574, y: -294.2}
   m_SizeDelta: {x: 307, y: 328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7969527958695035508

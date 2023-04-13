@@ -6,12 +6,12 @@ public class Global : MonoBehaviour
     public GameObject menuScreen;
     public bool startPaused;
     public bool busy = false, disabled = false;
-    [SerializeField] private GameObject Interface;
+    [SerializeField] private GameObject gameHUD;
 
     void Start()
     {
         Screen.SetResolution(1920, 1080, true);
-        Interface.SetActive(false);
+        gameHUD.SetActive(false);
 
         if (startPaused)
              Pause();
@@ -42,7 +42,7 @@ public class Global : MonoBehaviour
         Time.timeScale = 1;
         busy = false;
         disabled = false;
-        Interface.SetActive(true);
+        gameHUD.SetActive(true);
     }
     
     public void Quit()

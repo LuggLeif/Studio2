@@ -14,7 +14,7 @@ public class CreateBuildings : MonoBehaviour
     private RaycastHit hit;
     private Transform tempBuild, finalBuild, buildShow, hoverPlot, upgHover, upgButton;
     
-    [SerializeField] private GameObject DLCScreen;
+    [SerializeField] private GameObject dlcScreen;
 
     private void Start()
     {
@@ -62,27 +62,24 @@ public class CreateBuildings : MonoBehaviour
             }
             else if ((Physics.Raycast(ray, out hit, maxUseDistance, useLayer)))
             {
-                if (hit.collider.CompareTag("Building")) // Building
+                if (upgrading && Input.GetKeyDown(KeyCode.Mouse0) && hit.collider.CompareTag("Building")) // Building
                 {
-                    if (upgrading && Input.GetKeyDown(KeyCode.Mouse0))
+                    upgHover = hit.transform;
+                    for (int i = 0; i < upgHover.childCount; i++)
                     {
-                        upgHover = hit.transform;
-                        for (int i = 0; i < upgHover.childCount; i++)
+                        if (upgHover.GetChild(i) && (i + 1 != upgHover.childCount)) // Checking if can upgrade
                         {
-                            if (upgHover.GetChild(i) && (i + 1 != upgHover.childCount))
+                            if (upgHover.GetChild(i).gameObject.activeSelf && upgHover.GetChild(i + 1))
                             {
-                                if (upgHover.GetChild(i).gameObject.activeSelf &&  upgHover.GetChild(i + 1))
-                                {
-                                    upgHover.GetChild(i).gameObject.SetActive(false);
-                                    upgHover.GetChild(i + 1).gameObject.SetActive(true);
-                                    return;
-                                }
+                                upgHover.GetChild(i).gameObject.SetActive(false);
+                                upgHover.GetChild(i + 1).gameObject.SetActive(true);
+                                return;
                             }
                         }
                     }
                 }
-               else if (Input.GetKeyDown(KeyCode.Mouse0) && (hit.collider.CompareTag("EasterEgg")))
-                    DLCScreen.SetActive(true);
+                else if (Input.GetKeyDown(KeyCode.Mouse0) && (hit.collider.CompareTag("EasterEgg")))
+                    dlcScreen.SetActive(true);
             }
         }
     }
@@ -144,34 +141,36 @@ public class CreateBuildings : MonoBehaviour
 
     private void ChangeMats(bool inPlot)
     {
+        Material placeMat = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+        
         foreach (Transform child in buildShow)
         {
             if (child.GetComponent<Renderer>() != null)
-                child.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                child.GetComponent<Renderer>().material = placeMat;
             else
             {
                 foreach (Transform grandChild in child)
                 {
                     if (grandChild.GetComponent<Renderer>() != null)
-                        grandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                        grandChild.GetComponent<Renderer>().material = placeMat;
                     else
                     {
                         foreach (Transform greatGrandChild in grandChild)
                         {
                             if (greatGrandChild.GetComponent<Renderer>() != null)
-                                greatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                                greatGrandChild.GetComponent<Renderer>().material = placeMat;
                             else
                             {
                                 foreach (Transform greatGreatGrandChild in greatGrandChild)
                                 {
                                     if (greatGreatGrandChild.GetComponent<Renderer>() != null)
-                                        greatGreatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                                        greatGreatGrandChild.GetComponent<Renderer>().material = placeMat;
                                     else
                                     {
                                         foreach (Transform triGreatGrandChild in greatGreatGrandChild)
                                         {
                                             if (triGreatGrandChild.GetComponent<Renderer>() != null)
-                                                triGreatGrandChild.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/" + (inPlot ? "Place" : "Wrong"));
+                                                triGreatGrandChild.GetComponent<Renderer>().material = placeMat;
                                         }
                                     }
                                 }

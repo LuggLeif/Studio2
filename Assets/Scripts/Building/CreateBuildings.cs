@@ -62,24 +62,27 @@ public class CreateBuildings : MonoBehaviour
             }
             else if ((Physics.Raycast(ray, out hit, maxUseDistance, useLayer)))
             {
-                if (upgrading && Input.GetKeyDown(KeyCode.Mouse0) && hit.collider.CompareTag("Building")) // Building
+                if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    upgHover = hit.transform;
-                    for (int i = 0; i < upgHover.childCount; i++)
+                    if (upgrading && hit.collider.CompareTag("Building")) // Building
                     {
-                        if (upgHover.GetChild(i) && (i + 1 != upgHover.childCount)) // Checking if can upgrade
+                        upgHover = hit.transform;
+                        for (int i = 0; i < upgHover.childCount; i++)
                         {
-                            if (upgHover.GetChild(i).gameObject.activeSelf && upgHover.GetChild(i + 1))
+                            if (upgHover.GetChild(i) && (i + 1 != upgHover.childCount)) // Checking if can upgrade
                             {
-                                upgHover.GetChild(i).gameObject.SetActive(false);
-                                upgHover.GetChild(i + 1).gameObject.SetActive(true);
-                                return;
+                                if (upgHover.GetChild(i).gameObject.activeSelf && upgHover.GetChild(i + 1))
+                                {
+                                    upgHover.GetChild(i).gameObject.SetActive(false);
+                                    upgHover.GetChild(i + 1).gameObject.SetActive(true);
+                                    return;
+                                }
                             }
                         }
                     }
+                    else if (hit.collider.CompareTag("EasterEgg"))
+                        dlcScreen.SetActive(true);
                 }
-                else if (Input.GetKeyDown(KeyCode.Mouse0) && (hit.collider.CompareTag("EasterEgg")))
-                    dlcScreen.SetActive(true);
             }
         }
     }

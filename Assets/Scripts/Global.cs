@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Global : MonoBehaviour
-{
+{ 
+    [SerializeField] private GameObject gameHUD;
     public GameObject menuScreen;
     public bool startPaused;
     public bool busy = false, disabled = false;
-    [SerializeField] private GameObject gameHUD;
 
     void Start()
     {
@@ -60,8 +60,8 @@ public class Global : MonoBehaviour
         SceneManager.LoadScene("BetaBuild");
     }
 
-    public void LoadLoop()
+    /*public void LoadLoop()
     {
         SceneManager.LoadScene("LoopScene"); //, LoadSceneMode.Additive);
-    }
+    }*/
 }

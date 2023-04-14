@@ -50,8 +50,10 @@ public class InterfaceInteraction : MonoBehaviour
             child.gameObject.SetActive(true);
             child.GetComponent<Image>().raycastTarget = true;
         }
-        
-        layerSize = category + 1;
+
+        if (category == 0)
+            category += 1;
+        layerSize = category;
     }
     public void SpawnBuilding(string selection)
     {

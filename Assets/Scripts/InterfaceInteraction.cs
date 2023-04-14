@@ -35,22 +35,6 @@ public class InterfaceInteraction : MonoBehaviour
         openConstMenu.GetChild(menu).GetComponent<Image>().raycastTarget = true;
         openConstMenu.GetChild(4).gameObject.SetActive(true);   // Arrow
 
-        switch (menu)
-        {
-            case 0:
-                folMenu = "Buildings/";
-                decoration = "Decorations/";
-                break;
-            case 1:
-                folMenu += "Housing/";
-                decoration += "Housing/";
-                break;
-            case 2:
-                folMenu += "Vendors/";
-                decoration += "Vendors/";
-                break;
-        }
-
         foreach (Transform child in openConstMenu.GetChild(menu))
             child.GetComponent<Image>().raycastTarget = true;   // Children
 
@@ -73,7 +57,7 @@ public class InterfaceInteraction : MonoBehaviour
     {
         CloseUI();
         
-        makeEm.BuildingSpecs(folMenu + "/" + selection, selection, layerSize);
+        makeEm.BuildingSpecs("Buildings/" + selection, selection, layerSize);
     }
 
     private void CloseSelection()

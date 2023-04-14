@@ -39,11 +39,38 @@ MonoBehaviour:
   Path: Assets/FMOD_Studio2/Studio2FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638158537441318511
+  lastModified: 638170821072263796
   FileSizes:
   - Name: Desktop
-    Value: 1000
+    Value: 1170
   Exists: 1
+--- !u!114 &-3433796752931668058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ocean
+  m_EditorClassIdentifier: 
+  Path: event:/Ocean
+  Guid:
+    Data1: 1237449977
+    Data2: 1295389922
+    Data3: 2086279571
+    Data4: -2124168584
+  Banks:
+  - {fileID: 2078430707721404745}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2623780142165678754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,12 +112,16 @@ MonoBehaviour:
   - {fileID: 2078430707721404745}
   EditorEvents:
   - {fileID: 6653368531733541338}
+  - {fileID: 2840850855610145483}
+  - {fileID: 2800681294252845198}
+  - {fileID: 3662899336476627900}
+  - {fileID: -3433796752931668058}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2078430707721404745}
   StringsBanks:
   - {fileID: -5461858265528706592}
-  cacheTime: 638158537441318511
+  cacheTime: 638170821072263796
   cacheVersion: 131601
 --- !u!114 &2078430707721404745
 MonoBehaviour:
@@ -107,10 +138,10 @@ MonoBehaviour:
   Path: Assets/FMOD_Studio2/Studio2FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638158537441298520
+  lastModified: 638170821072253796
   FileSizes:
   - Name: Desktop
-    Value: 2588064
+    Value: 6745664
   Exists: 1
 --- !u!114 &2261254502000130228
 MonoBehaviour:
@@ -136,6 +167,60 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2800681294252845198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LightHouseTheme
+  m_EditorClassIdentifier: 
+  Path: event:/LightHouseTheme
+  Guid:
+    Data1: 1778161051
+    Data2: 1121972554
+    Data3: 65040512
+    Data4: 842931618
+  Banks:
+  - {fileID: 2078430707721404745}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 112099
+--- !u!114 &2840850855610145483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Seagulls
+  m_EditorClassIdentifier: 
+  Path: event:/Seagulls
+  Guid:
+    Data1: -1373660142
+    Data2: 1127248829
+    Data3: 1841493684
+    Data4: 1087336307
+  Banks:
+  - {fileID: 2078430707721404745}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3550564385004331215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +245,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3662899336476627900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Chatter
+  m_EditorClassIdentifier: 
+  Path: event:/Chatter
+  Guid:
+    Data1: -1055012661
+    Data2: 1093474546
+    Data3: 907897521
+    Data4: 1804283199
+  Banks:
+  - {fileID: 2078430707721404745}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4521320843047965330
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f0505fbd-1fbd-4226-9016-e973d63cfc58}">
+		<property name="assetPath">
+			<value>SFX/ES_Cafe Bossa - Riverworn.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>112.92</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8b0cbb2c-3ed0-4da7-891c-4b8ea219b9d5}</destination>
+		</relationship>
+	</object>
+</objects>

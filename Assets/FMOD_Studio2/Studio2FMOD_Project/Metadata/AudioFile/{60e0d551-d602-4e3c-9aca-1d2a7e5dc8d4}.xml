@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{60e0d551-d602-4e3c-9aca-1d2a7e5dc8d4}">
+		<property name="assetPath">
+			<value>SFX/ES_Seagulls - SFX Producer.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>33.768000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8b0cbb2c-3ed0-4da7-891c-4b8ea219b9d5}</destination>
+		</relationship>
+	</object>
+</objects>

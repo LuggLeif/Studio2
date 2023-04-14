@@ -16212,21 +16212,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5999952}
     m_Modifications:
+    - target: {fileID: 4513745918011694845, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 291785387}
+    - target: {fileID: 4513745918011694845, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseSize
+      objectReference: {fileID: 0}
     - target: {fileID: 4513745918326993240, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8987291387813653320, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 291785387}
+    - target: {fileID: 8987291387813653320, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConstMenus
+      objectReference: {fileID: 0}
     - target: {fileID: 8987291388108068923, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 291785386}
+      objectReference: {fileID: 291785387}
     - target: {fileID: 8987291388108068923, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConstMenus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987291388221121327, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 291785387}
+    - target: {fileID: 8987291388221121327, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ConstMenus
       objectReference: {fileID: 0}
     - target: {fileID: 8987291388636500417, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987291389306145723, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 291785387}
+    - target: {fileID: 8987291389306145723, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseSize
       objectReference: {fileID: 0}
     - target: {fileID: 8987291389690355173, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_Name

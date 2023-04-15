@@ -96,9 +96,8 @@ public class CreateBuildings : MonoBehaviour
         
         tempBuild = Instantiate(finalBuild, null);  // Temp building
         buildShow = tempBuild.transform.GetChild(tempBuild.transform.childCount - 2);   // Temp build lvl1
-        buildShow.gameObject.SetActive(true);
-        
         plotting = true;
+        buildShow.gameObject.SetActive(true);
     }
     private void PlaceBuilding()
     {

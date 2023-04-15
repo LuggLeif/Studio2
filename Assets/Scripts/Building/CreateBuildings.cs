@@ -1,8 +1,8 @@
 using System;
-using Mono.Cecil.Cil;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CreateBuildings : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class CreateBuildings : MonoBehaviour
             UpgradeToggle();
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        bool isOverUI = EventSystem.current.IsPointerOverGameObject();
 
         if (!isOverUI)
         {

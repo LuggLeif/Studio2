@@ -8731,8 +8731,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944081679}
-  m_LocalRotation: {x: 0.006583106, y: 0.9916712, z: -0.115363345, w: 0.05688876}
-  m_LocalPosition: {x: 59.805912, y: 29.541342, z: 116.52889}
+  m_LocalRotation: {x: -0.023731185, y: -0.97554386, z: 0.13430306, w: -0.17237683}
+  m_LocalPosition: {x: -13.396694, y: 11.991928, z: 21.78518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16220,6 +16220,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 1421652830333681937, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EliteGreek
+      objectReference: {fileID: 0}
     - target: {fileID: 4513745916495511737, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
@@ -16276,6 +16280,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 4564016544166135832, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: EliteTrader
+      objectReference: {fileID: 0}
     - target: {fileID: 8279072969138151648, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16290,7 +16298,7 @@ PrefabInstance:
       objectReference: {fileID: 291785387}
     - target: {fileID: 8987291387813653320, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ConstMenus
+      value: ChooseSize
       objectReference: {fileID: 0}
     - target: {fileID: 8987291387813653320, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
@@ -16315,6 +16323,10 @@ PrefabInstance:
     - target: {fileID: 8987291388108068923, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ConstMenus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987291388153980141, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_Name
+      value: AgoraMarket
       objectReference: {fileID: 0}
     - target: {fileID: 8987291388153980147, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16367,6 +16379,10 @@ PrefabInstance:
     - target: {fileID: 8987291388972778703, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987291389006280588, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
+      propertyPath: m_Name
+      value: MarketStalls
       objectReference: {fileID: 0}
     - target: {fileID: 8987291389006280594, guid: 2c2f7cc356613fd428fe7e5e4b284d52, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

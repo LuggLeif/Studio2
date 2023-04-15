@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6575960346632143670}
   - component: {fileID: 3379600553763935901}
   m_Layer: 0
-  m_Name: Elite
+  m_Name: EliteGreek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

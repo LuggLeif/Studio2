@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5656791287952467466}
   - component: {fileID: 2371379548983827861}
   m_Layer: 0
-  m_Name: TraderGreek
+  m_Name: EliteTrader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

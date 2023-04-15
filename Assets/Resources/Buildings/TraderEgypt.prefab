@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3237267923511567256}
   - component: {fileID: 3237267923511567259}
   m_Layer: 0
-  m_Name: Trader
+  m_Name: TraderEgypt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3237267923511567256}
     m_Modifications:
+    - target: {fileID: 19681836883226579, guid: 04e86f45b498f7444a3fad8058e976f5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 799796447661254533, guid: 04e86f45b498f7444a3fad8058e976f5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4122469923337883165, guid: 04e86f45b498f7444a3fad8058e976f5, type: 3}
       propertyPath: m_Name
       value: TraderLvl0

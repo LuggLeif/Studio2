@@ -51,9 +51,9 @@ public class InterfaceInteraction : MonoBehaviour
             child.GetComponent<Image>().raycastTarget = true;
         }
 
-        if (category == 0)
-            category += 1;
-        layerSize = category;
+        if (category == 2)
+            category -= 2;
+        layerSize = category + 1;
     }
     public void SpawnBuilding(string selection)
     {

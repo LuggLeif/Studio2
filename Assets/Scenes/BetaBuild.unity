@@ -6128,6 +6128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 291785391}
     m_Modifications:
+    - target: {fileID: 7969527958003056411, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_text
+      value: I use many masks; not to hide away, but as tools to get what I want.
+        People usually fall for my charismatic personality.
+      objectReference: {fileID: 0}
     - target: {fileID: 7969527958322837536, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6240,8 +6245,28 @@ PrefabInstance:
       propertyPath: libraryUI
       value: 
       objectReference: {fileID: 1360837484}
+    - target: {fileID: 7969527959763967950, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7969527959770248606, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862904672857669107, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862904672857669107, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862904672857669107, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862904672857669107, guid: 82b45acf06cc74d4eb018d5629c03f78, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

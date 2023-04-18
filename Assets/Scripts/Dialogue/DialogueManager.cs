@@ -8,20 +8,18 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private Global global;
     [SerializeField] private GameObject intHUD, libraryUI;
-    private bool uiToggle = false;
+    private bool uiToggle;
 
     private Transform cleopatra, caesar, merchant;
     private GameObject summary, choices;
 
-    private int dialogueCounter = 0;
+    private int dialogueCounter;
 
-    private void Start()
+    private void Awake()
     {
-        InitializeScript();
-    }
-    
-    private void InitializeScript()
-    {
+        uiToggle = true;
+        dialogueCounter = 0;
+        
         cleopatra = transform.GetChild(0);
         caesar = transform.GetChild(1);
         merchant = transform.GetChild(2);
@@ -35,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         if (global.busy)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && (dialogueCounter < 12))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && (dialogueCounter < 13))
         {
             switch (dialogueCounter)
             {
@@ -110,22 +108,31 @@ public class DialogueManager : MonoBehaviour
                     cleopatra.GetChild(0).GetChild(7).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
-                case 11:
+                case 11: // Story Summary
                     caesar.gameObject.SetActive(false);
+                    cleopatra.gameObject.SetActive(false);
                     cleopatra.GetChild(0).gameObject.SetActive(false);
                     cleopatra.GetChild(0).GetChild(7).gameObject.SetActive(false);
                     
+                    summary.SetActive(true);
+                    summary.transform.GetChild(0).gameObject.SetActive(true);
+                    dialogueCounter++;
+                    break;
+                case 12: // Choice
+                    summary.transform.GetChild(0).gameObject.SetActive(false);
+
+                    cleopatra.gameObject.SetActive(true);
                     merchant.gameObject.SetActive(true);
                     merchant.GetChild(0).gameObject.SetActive(true);
                     merchant.GetChild(0).GetChild(0).gameObject.SetActive(true);
                     merchant.GetChild(0).GetChild(1).gameObject.SetActive(true);
                     
-                    summary.SetActive(true);
-                    summary.transform.GetChild(0).gameObject.SetActive(true);
-                    
+                    summary.transform.GetChild(1).gameObject.SetActive(true);
                     choices.SetActive(true);
                     choices.transform.GetChild(0).gameObject.SetActive(true);
                     choices.transform.GetChild(1).gameObject.SetActive(true);
+                    choices.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                    choices.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
                     dialogueCounter++;
                     break;
             }
@@ -134,10 +141,9 @@ public class DialogueManager : MonoBehaviour
 
     public void UpgradeLibrary()
     {
-        InitializeScript();
         NarrativeUI();
-        global.disabled = true;
-        
+        transform.GetChild(5).gameObject.SetActive(true); // Exit button
+
         cleopatra.gameObject.SetActive(true);
         
         caesar.gameObject.SetActive(true);
@@ -148,11 +154,13 @@ public class DialogueManager : MonoBehaviour
     
     private void NarrativeUI()
     {
+        global.disabled = uiToggle;
         uiToggle = !uiToggle;
+        
         intHUD.SetActive(uiToggle);
         intHUD.GetComponent<RawImage>().raycastTarget = uiToggle;
-        libraryUI.SetActive(false);
-        libraryUI.GetComponent<Image>().raycastTarget = uiToggle;
+        libraryUI.SetActive(!uiToggle);
+        libraryUI.GetComponent<Image>().raycastTarget = !uiToggle;
     }
 
     public void ExitDialogue()
@@ -172,7 +180,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        global.disabled = false;
+        NarrativeUI();
         gameObject.SetActive(false);
     }
 }

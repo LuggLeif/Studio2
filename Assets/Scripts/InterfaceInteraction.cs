@@ -1,7 +1,5 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class InterfaceInteraction : MonoBehaviour
@@ -9,9 +7,6 @@ public class InterfaceInteraction : MonoBehaviour
     [SerializeField] private CreateBuildings makeEm;
     private Transform openConstMenu, exitButton, currentMenu;
     private int layerSize;
-    private string folMenu, folSize, decoration;
-
-    private string[] decNames = new string[10];
 
     private void Start()
     {
@@ -41,7 +36,6 @@ public class InterfaceInteraction : MonoBehaviour
         exitButton.gameObject.SetActive(true);  // Exit button
         exitButton.GetComponent<Image>().raycastTarget = true;
     }
-
     public void ChooseSize(int category)
     {
         CloseSelection();
@@ -58,23 +52,7 @@ public class InterfaceInteraction : MonoBehaviour
     public void SpawnBuilding(string selection)
     {
         CloseUI();
-        
-        makeEm.BuildingSpecs("Buildings/" + selection, selection, layerSize);
-    }
-
-    private void CloseSelection()
-    {
-        if (!currentMenu)
-            return;
-        
-        foreach (Transform child in currentMenu)
-        {
-            foreach (Transform grandChild in child)
-            {
-                grandChild.gameObject.SetActive(false);
-                grandChild.GetComponent<Image>().raycastTarget = false;
-            }
-        }
+        makeEm.BuildingSpecs(selection, layerSize);
     }
     public void CloseUI()
     {
@@ -94,5 +72,19 @@ public class InterfaceInteraction : MonoBehaviour
         openConstMenu.GetChild(4).gameObject.SetActive(false);  // Open button
         openConstMenu.GetComponent<Button>().enabled = true;
         openConstMenu.GetComponent<Image>().raycastTarget = true;
+    }
+    private void CloseSelection()
+    {
+        if (!currentMenu)
+            return;
+        
+        foreach (Transform child in currentMenu)
+        {
+            foreach (Transform grandChild in child)
+            {
+                grandChild.gameObject.SetActive(false);
+                grandChild.GetComponent<Image>().raycastTarget = false;
+            }
+        }
     }
 }

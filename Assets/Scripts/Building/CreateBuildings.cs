@@ -1,19 +1,24 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 public class CreateBuildings : MonoBehaviour
 {
     [SerializeField] private Global global;
     private LayerMask useLayer = 1 << 7, plotLayer;
-
+    private Object[] decorations;
+    
     private float maxUseDistance = 100f;
     private bool plotting, upgrading;
     private RaycastHit hit;
-    private Transform tempBuild, finalBuild, buildShow, hoverPlot, upgHover, upgButton;
-    
+    private Transform tempBuild, finalBuild, finalDecor, buildShow, hoverPlot, upgHover, upgButton;
+    private string curBuild;
+
     [SerializeField] private GameObject dlcScreen;
 
     private void Start()
@@ -87,9 +92,12 @@ public class CreateBuildings : MonoBehaviour
         }
     }
 
-    public void BuildingSpecs(string curBuilding, string curName, int layerSize)
+    public void BuildingSpecs(string curName, int layerSize)
     {
-        finalBuild = Instantiate(Resources.Load<GameObject>(curBuilding), null).transform;   // End building
+        curBuild = "Buildings/" + curName;
+        decorations = Resources.LoadAll("Decorations/" + curName);
+
+        finalBuild = Instantiate(Resources.Load<GameObject>(curBuild), null).transform;   // End building
         finalBuild.name = curName;
         
         plotLayer = (1 << layerSize + 8) | (1 << 6);    // Mouse hit layers
@@ -116,11 +124,22 @@ public class CreateBuildings : MonoBehaviour
         
         finalBuild.position = new Vector3(hoverPlot.position.x, tempBuild.position.y, hoverPlot.position.z);
         finalBuild.rotation = hoverPlot.rotation;
-        
+
         finalBuild.GetChild(finalBuild.childCount - 2).gameObject.SetActive(true);
         finalBuild.parent = hoverPlot;
         finalBuild.tag = "Building";
         finalBuild.gameObject.layer = LayerMask.NameToLayer("Usable");
+        
+        if (decorations.Length != 0)
+        {
+            finalDecor = Instantiate((GameObject)decorations[Random.Range(0, decorations.Length)], null).transform;   // Decor building
+            finalDecor.name = finalBuild.name + "Decor";
+          
+            finalDecor.position = new Vector3(hoverPlot.position.x, tempBuild.position.y, hoverPlot.position.z);
+            finalDecor.rotation = hoverPlot.rotation;
+            finalDecor.parent = hoverPlot;
+        }
+        
         CancelBuild();
     }
     

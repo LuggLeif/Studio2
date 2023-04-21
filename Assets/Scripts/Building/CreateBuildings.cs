@@ -117,7 +117,7 @@ public class CreateBuildings : MonoBehaviour
         {
             foreach (Transform plot in hoverPlot.parent)
             {
-                if (plot.gameObject.layer != plotLayer) // hoverPlot.gameObject.layer
+                if (plot.gameObject.layer != hoverPlot.gameObject.layer)
                     plot.gameObject.SetActive(false);
             }
         }
@@ -128,7 +128,7 @@ public class CreateBuildings : MonoBehaviour
         finalBuild.GetChild(finalBuild.childCount - 2).gameObject.SetActive(true);
         finalBuild.parent = hoverPlot;
         finalBuild.tag = "Building";
-        finalBuild.gameObject.layer = useLayer; // LayerMask.NameToLayer("Usable")
+        finalBuild.gameObject.layer = LayerMask.NameToLayer("Usable");
 
         if (decorations.Length != 0)
         {
